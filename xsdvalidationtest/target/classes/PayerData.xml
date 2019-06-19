@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payerdata>
+	<payer>
+	<payercustomernumber>RTRRTTdfdf</payercustomernumber>
+	<payeraccountnumber>fsdfsdfdsfdfsdf</payeraccountnumber>
+	<account>NL45INGB1234582036</account>
+	<name>TESTE2EPayer</name>
+	<address>AndheriGali</address>
+	<city>Pune</city>
+	<postcode>411014</postcode>
+	<country>India</country>
+	<nationalid>SE</nationalid>
+	<biccode>NBAESS</biccode>
+	<transactiontype>PAYM</transactiontype>
+	</payer>
+</payerdata>

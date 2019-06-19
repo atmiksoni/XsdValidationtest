@@ -1,0 +1,51 @@
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:element name="payerdata" type="PayerData"/>
+
+	<xsd:complexType name="PayerData">
+		<xsd:sequence>
+			<xsd:element name="payer" minOccurs="1" maxOccurs="unbounded" type="Payer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Payer">
+		<xsd:all>
+			<xsd:element name="payercustomernumber" minOccurs="1" maxOccurs="1" type="Max35Text"/>
+			<xsd:element name="payeraccountnumber" minOccurs="0" maxOccurs="1" type="Max35Text"/>
+			<xsd:element name="account" minOccurs="1" maxOccurs="1" type="Max35Text"/>
+			<xsd:element name="name" minOccurs="1" maxOccurs="1" type="Max255Text"/>
+			<xsd:element name="address" minOccurs="0" maxOccurs="1" type="Max255Text"/>
+			<xsd:element name="city" minOccurs="0" maxOccurs="1" type="Max255Text"/>
+			<xsd:element name="postcode" minOccurs="0" maxOccurs="1" type="Max35Text"/>
+			<xsd:element name="country" minOccurs="0" maxOccurs="1" type="Max35Text"/>
+			<xsd:element name="nationalid" minOccurs="0" maxOccurs="1" type="xsd:string"/>
+			<xsd:element name="biccode" minOccurs="0" maxOccurs="1" type="Max35Text"/>
+			<xsd:element name="transactiontype" minOccurs="0" maxOccurs="1" type="Max35Text"/>
+			<xsd:element name="action" minOccurs="0" maxOccurs="1" type="ActionType"/>
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:simpleType name="Max35Text">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Max255Text">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="ActionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="D"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
